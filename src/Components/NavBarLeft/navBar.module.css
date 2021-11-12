@@ -1,18 +1,45 @@
 .navbar{
     width: 245px;
-    height:auto;
+    height:900px;
     background-color: #fff;
-
     padding: 0 10px 0 0;
-
     position: fixed;
     top: 60px;
     left: 0;
+    overflow-x: scroll;
 }
+
 
 .navbar:hover{
     overflow-y: scroll;
+    overflow-x: hidden;
 }
+
+.navbar::-webkit-scrollbar-track{
+    width: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px 0;
+    background-color: #ffffff;
+    
+}
+.navbar::-webkit-scrollbar{
+   width: 8px;
+   max-height: 40px;
+   background-color: transparent;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: transparent;
+    max-height: 5px;
+    
+  }
+.navbar:hover::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color:rgb(65, 65, 65);
+    min-height: 5px;
+  }
 
 
 .sigin{
@@ -67,7 +94,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 5px 0;
     
   
 }
@@ -113,6 +140,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-bottom: none !important;
     
 }
 .navigation:nth-of-type(8) > p{
@@ -140,6 +168,8 @@
     margin-right: 20px;
 
 }
+
+
 
 .home{
     border: 1px solid red;
