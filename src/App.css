@@ -1,0 +1,13 @@
+.hover{
+    width: 150px;
+    transition: 0.3s ease-in-out;
+    padding: 0px 10px;
+    background-color: rgba(3, 3, 3, 0.507);
+    color: #fff;
+    text-align: center;
+    height: 50px;
+}
+
+.hover p{
+    font-size: 14px;
+}
