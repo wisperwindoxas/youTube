@@ -1,0 +1,58 @@
+{
+    "HomeVideo":[
+        {
+        "id":1,
+        "img":"https://i.ytimg.com/vi/Px0vf8JuFWQ/mqdefault.jpg", 
+        "time":"21:18", 
+        "channel_logo":"https://yt3.ggpht.com/n14OzWiuZog5xERbXgHE6M2IbsJqY8UxXgqmamzOvLQJ5ks2LPluAfTGcLzyjqcWvkcABz_6=s48-c-k-c0x00ffffff-no-rj",
+        "nameVideo": "QAHQAHA - MARDIKOR OTA",
+        "chanelName":"SevimliTv",
+        "watchVideoCount":"149 тыс. просмотров 4 недели назад"
+     },
+        {
+            "id":2,
+            "img":"https://i.ytimg.com/vi/Px0vf8JuFWQ/mqdefault.jpg", 
+            "time":"21:18", 
+            "channel_logo":"https://yt3.ggpht.com/n14OzWiuZog5xERbXgHE6M2IbsJqY8UxXgqmamzOvLQJ5ks2LPluAfTGcLzyjqcWvkcABz_6=s48-c-k-c0x00ffffff-no-rj",
+            "nameVideo": "QAHQAHA - MARDIKOR OTA",
+            "chanelName":"SevimliTv",
+            "watchVideoCount":"149 тыс. просмотров 4 недели назад"
+     },
+        {
+        "id":3,
+        "img":"https://i.ytimg.com/vi/HHvhzan7Zqg/maxresdefault.jpg", 
+        "time":"45:56", 
+       " channel_logo":"https://yt3.ggpht.com/jQwJwGG9oAuo5zpMPfzoV_9yUacE-CEpIILuwk9zmGdkwCyY9WKMbGSKfYVnGxFLRzRO9efwUA4=s48-c-k-c0x00ffffff-no-rj",
+        "nameVideo": "Mana o'sha shov shuv bo'lgan maruza | Shukurullo domla yangi 2021 maruzalari | Televizo'rda pazo'r..",
+        "chanelName":"IYMON QASRI",
+        "watchVideoCount":"77 668 просмотров27 окт. 2021 г."
+     },
+        {
+        "id":4,
+        "img":"https://i.ytimg.com/vi/8IRuO-Bwdm4/maxresdefault.jpg", 
+        "time":"3:11", 
+        "channel_logo":"https://yt3.ggpht.com/ytc/AKedOLQF0TJwxZ1mwiP5q57Q-ztjchErZ2I5elFJ2Rf4=s48-c-k-c0x00ffffff-no-rj",
+        "nameVideo": "Ziyoda - Tor ko'cha (Official Music Video)",
+        "chanelName":"Ziyoda",
+        "watchVideoCount":"5 898 087 просмотров 4 сент. 2021 г."
+     },
+        {
+            "id":5,
+            "img":"https://i.ytimg.com/vi/Px0vf8JuFWQ/mqdefault.jpg", 
+            "time":"21:18", 
+            "channel_logo":"https://yt3.ggpht.com/n14OzWiuZog5xERbXgHE6M2IbsJqY8UxXgqmamzOvLQJ5ks2LPluAfTGcLzyjqcWvkcABz_6=s48-c-k-c0x00ffffff-no-rj",
+            "nameVideo": "QAHQAHA - MARDIKOR OTA",
+            "chanelName":"SevimliTv",
+            "watchVideoCount":"149 тыс. просмотров 4 недели назад"
+     },
+        {
+            "id":6,
+            "img":"https://i.ytimg.com/vi/Px0vf8JuFWQ/mqdefault.jpg", 
+            "time":"21:18", 
+            "channel_logo":"https://yt3.ggpht.com/n14OzWiuZog5xERbXgHE6M2IbsJqY8UxXgqmamzOvLQJ5ks2LPluAfTGcLzyjqcWvkcABz_6=s48-c-k-c0x00ffffff-no-rj",
+            "nameVideo": "QAHQAHA - MARDIKOR OTA",
+            "chanelName":"SevimliTv",
+            "watchVideoCount":"149 тыс. просмотров 4 недели назад"
+     }
+]
+}
