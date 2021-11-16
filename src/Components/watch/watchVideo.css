@@ -2,7 +2,7 @@
     width: 100%;
     margin-top: 100px;
     padding: 0 40px;
-    border: 1px solid red;
+    
 
 
 }
@@ -24,6 +24,7 @@
     bottom: 0;
     left: 0;
     padding: 0 10px;
+    background-color: black;
    
 }
 
@@ -45,6 +46,7 @@
    border-radius: 1px solid red;
     box-sizing: border-box;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 .play_next_volume_time{
@@ -122,4 +124,31 @@
 #video{
     width: 100%;
     height: auto;
+}
+
+
+
+.setting_full_screen{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.setting_full_screen button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+.setting_full_screen button img{
+    width: 25px;
+    height: 25px;
+}
+
+.small img{
+    width: 30px;
+    height: 30px;
 }
