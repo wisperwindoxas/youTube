@@ -17,21 +17,29 @@ import {
 export default function WatchVideo() {
   const [isPlaying, setIsplaying] = React.useState(false);
   const [isMiddle, setIsMiddle] = React.useState(false);
-  
+  const [isMuteVolume, setIsMuteVolume] = React.useState(false);
+  const [getSecond, setGetSecond] = React.useState(0);
+  const [getMinut, setGetMinut] = React.useState(0);
+  const [getCurrentDuration, setGetCurrentDuration] = React.useState(parseInt(0));
+  let   [getCurrentTime, setGetCurrentTime] = React.useState(parseInt(0));
   const videoFull = React.useRef()
   const volumeIcon = React.useRef()
+  const progress = React.useRef()
 
     const fullScreenToggler = () =>{
        videoFull.current.requestFullscreen()
        
     }
 
+
     const playMovies = () =>{
         setIsplaying(!isPlaying)
        if(!isPlaying){
         videoFull.current.play()
        }else{
+         setIsplaying(false)
         videoFull.current.pause()
+        
        }
     }
 
@@ -46,24 +54,67 @@ export default function WatchVideo() {
             if(e < 0.3){
                 volumeIcon.current.src =  volumeLow
             }
-            if(e < 0){
+            if(e <= 0){
                 volumeIcon.current.src =  mute
             }
     }
+
+    const MuteVolume = () =>{
+      setIsMuteVolume(!isMuteVolume)
+      if(isMuteVolume){
+        
+        videoFull.current.volume = 0;
+        volumeIcon.current.src =  mute
+      }else{
+         videoFull.current.volume = 1;
+         volumeIcon.current.src = volumeUp
+      }
+
+      
+    }
+    let currents = getCurrentTime;
+    const progressBar = (e) =>{
+      const width = e.target.clientWidth;
+      const clickX = e.target.offsetX;
+      console.log(e.target.clientWidth);
+      const duration = getCurrentDuration;
+      currents = (clickX / width) * duration;
+      
+    }
+
+
+  function updateProgress(e){
+    setGetCurrentDuration(parseInt(e.target.duration))
+    setGetCurrentTime(parseInt(e.target.currentTime))
+    const duration = e.target.duration;
+    const currentTime = e.target.currentTime
+    const progressPercent = (currentTime / duration) * 100;
+    progress.current.style.width = `${progressPercent}%`
+    videoFull.current.onloadeddata = function(){
+        let sec = parseInt(duration % 60)
+        let min = parseInt((duration / 60) % 60)
+        setGetSecond(sec)
+        setGetMinut(min)
+    }
+    
+}
+
+
 
   return (
     <div className={isMiddle ? "watch_middle": "watch"}>
     
       <div className={isMiddle ? "middleVideoPlayer": "videoPlayer"}>
-        <video ref={videoFull}
+        <video  ref={videoFull}
           id="video"
-        
-          src="/video/LITTLE BIG – SKIBIDI (official music video).mp4"
+          controls={false}
+          onTimeUpdate={(e) => updateProgress(e)}
+          src="/video/Ziyoda  Tor kocha Official Music.mp4"
           poster="/video/Enrique Iglesias.jpg"
         ></video>
         <div className="controll">
-          <div className="progressbar">
-            <div className="progress"></div>
+          <div onClick={(e) => progressBar(e)} className="progressbar">
+            <div ref={progress} className="progress"></div>
           </div>
           <div className="controlsBtn">
             <div className="play_next_volume_time">
@@ -74,9 +125,12 @@ export default function WatchVideo() {
                 <img src={nextBtn} alt="" />
               </button>
               <div className="volume">
-                <img ref={volumeIcon} src={volumeUp} alt="" />
+                <img onClick={MuteVolume} ref={volumeIcon} src={volumeUp} alt="" />
                 <input
-                    onInput={(e) => Volume(e.target.value)}
+                  onInput={(e) => {
+                    Volume(e.target.value)
+                  }}
+                  
                   type="range"
                   id="volume"
                   name="volume"
@@ -87,7 +141,7 @@ export default function WatchVideo() {
                 />
               </div>
               <div className="time">
-                <span>1:48</span> / <span>24:05</span>
+                <span>00:00</span> / <span>0{getMinut}:0{getSecond}</span>
               </div>
             </div>
 
