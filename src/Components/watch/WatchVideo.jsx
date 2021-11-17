@@ -17,14 +17,47 @@ import {
 export default function WatchVideo() {
   const [isPlaying, setIsplaying] = React.useState(false);
   const [isMiddle, setIsMiddle] = React.useState(false);
+  
+  const videoFull = React.useRef()
+  const volumeIcon = React.useRef()
+
+    const fullScreenToggler = () =>{
+       videoFull.current.requestFullscreen()
+       
+    }
+
+    const playMovies = () =>{
+        setIsplaying(!isPlaying)
+       if(!isPlaying){
+        videoFull.current.play()
+       }else{
+        videoFull.current.pause()
+       }
+    }
+
+    const Volume = (e) => {
+            videoFull.current.volume = e
+            if(e > 0.8){
+                volumeIcon.current.src = volumeUp
+            }
+            if(e < 0.6){
+                volumeIcon.current.src =  volumeMiddle
+            }
+            if(e < 0.3){
+                volumeIcon.current.src =  volumeLow
+            }
+            if(e < 0){
+                volumeIcon.current.src =  mute
+            }
+    }
 
   return (
-    <div className="watch">
-      <div className="videoPlayer">
-        <video
-          width="100%"
+    <div className={isMiddle ? "watch_middle": "watch"}>
+    
+      <div className={isMiddle ? "middleVideoPlayer": "videoPlayer"}>
+        <video ref={videoFull}
           id="video"
-          autoPlay="true"
+        
           src="/video/LITTLE BIG – SKIBIDI (official music video).mp4"
           poster="/video/Enrique Iglesias.jpg"
         ></video>
@@ -34,20 +67,23 @@ export default function WatchVideo() {
           </div>
           <div className="controlsBtn">
             <div className="play_next_volume_time">
-              <button onClick={() => setIsplaying(!isPlaying)} className="play">
+              <button onClick={playMovies} className="play">
                 {isPlaying ? <FaPause /> : <FaPlay />}
               </button>
               <button className="next">
                 <img src={nextBtn} alt="" />
               </button>
               <div className="volume">
-                <img src={volumeUp} alt="" />
+                <img ref={volumeIcon} src={volumeUp} alt="" />
                 <input
+                    onInput={(e) => Volume(e.target.value)}
                   type="range"
                   id="volume"
                   name="volume"
                   min="0"
-                  max="11"
+                  max="1"
+                  step="0.1"
+                  
                 />
               </div>
               <div className="time">
@@ -65,13 +101,14 @@ export default function WatchVideo() {
               <button className="middle">
                 <img onClick={() => setIsMiddle(!isMiddle)} src={isMiddle ? middle: middle_two} alt="" />
               </button>
-              <button className="full">
+              <button onClick={fullScreenToggler} className="full">
                 <img src={full} alt="" />
               </button>
             </div>
           </div>
         </div>
       </div>
+ 
     </div>
   );
 }
